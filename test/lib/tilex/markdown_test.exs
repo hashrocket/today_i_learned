@@ -25,6 +25,14 @@ defmodule Lib.Tilex.MarkdownTest do
       expected: "<pre><code class=\"elixir language-elixir\">defmodule Foo do\nend</code></pre>"
     },
     %{
+      input: "```elixir\niex(1)> %{foo: :bar} |> IO.inspect()\n```",
+      expected: "<pre><code class=\"elixir language-elixir\">iex(1)> %{foo: :bar} |> IO.inspect()</code></pre>"
+    },
+    %{
+      input: "```ruby\nirb(1)> array.map(&:to_s)\n```",
+      expected: "<pre><code class=\"ruby language-ruby\">irb(1)> array.map(&:to_s)</code></pre>"
+    },
+    %{
       input: "<script>alert('A great grasshopper!')</script>",
       expected: "<p>alert(&#39;A great grasshopper!&#39;)</p>"
     },
